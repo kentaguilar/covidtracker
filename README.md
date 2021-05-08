@@ -2,7 +2,7 @@
 
 A system that provides up-to-date covid tracking information all over the globe.
 
-##How to Use
+## How to Use
 
 - Pull a copy of the system
 
