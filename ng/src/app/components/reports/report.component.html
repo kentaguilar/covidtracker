@@ -1,0 +1,66 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+      Top Confirmed Cases Per Country
+    </h1>
+</section>
+
+<section class="content" style="padding-left:30px;padding-right:30px">
+
+    <div class="row">
+        <div class="col-md-2" style="margin-left:-15px">
+            <strong>Observation Date:</strong> <input type="Date" class="form-control" value="{{currentObservationDate}}" (change)="updateTopConfirmedResultsByObservationDate($event.target.value)"/>
+        </div>
+        <div class="col-md-1" style="margin-left:-15px">
+            <strong>Max Results: </strong>
+            <select class="form-control" value="{{currentMaxResults}}" (change)="updateTopConfirmedResultsByMaxResults($event.target.value)">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select>
+        </div>
+    </div>
+    <br/>
+
+	<div class="row">                
+        
+        <div class="box box-primary">            
+
+            <div class="box-header with-border">
+                <h3 class="box-title"><span id="result-count">{{ getTotalRecords() }}</span> Result(s) Found</h3>
+            </div>            
+
+            <div style="padding:10px;">
+            
+                <div *ngIf="covidCases">
+                    <table id="result-list" class="table table-striped table-bordered table-hover dt-responsive nowrap">
+                        <thead>   
+                            <tr>                          
+                                <th>Country</th>                                                                                                             
+                                <th><i class="fa fa-hotel"></i> Confirmed</th>  
+                                <th><i class="fa fa-frown-o"></i> Deaths</th>  
+                                <th><i class="fa fa-lightbulb-o"></i> Recovered</th>             
+                            </tr>
+
+                            <tr *ngFor="let covidCase of covidCases.countries">
+                                <td>{{covidCase.country}}</td>                       
+                                <td>{{covidCase.confirmed | number:'1.0':'en-US'}}</td>
+                                <td>{{covidCase.deaths | number:'1.0':'en-US'}}</td>
+                                <td>{{covidCase.recovered | number:'1.0':'en-US'}}</td>
+                            </tr>
+            
+                        </thead>             
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
