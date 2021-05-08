@@ -1,11 +1,13 @@
 # Covid Tracker v1.0
 
-A system that provides up-to-date covid tracking information all over the globe.
+A system that provides an up-to-date covid tracking information with data worldwide
 
 ## How to Use
 
 - Pull a copy of the system
 
-- You need to add in your database PostgreSQL connection strings under /db/db.js
+- Perform "npm install" on the project root & /ng directory, so needed dependencies are configured
 
-- If you have a copy of the code already, you can simply go to the main folder and run npm start
+- You need to add in your PostgreSQL connection strings under /db/db.js
+
+- If you have a copy of the code already, you can simply go to the project root folder and run "npm start"
